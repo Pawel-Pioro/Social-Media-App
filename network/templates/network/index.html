@@ -1,0 +1,43 @@
+{% extends "network/layout.html" %}
+{% load static %}
+
+{% block body %}
+    <h1 id="title"></h1>
+
+    <div id="allPosts">
+
+    </div>
+
+    <div id="following">
+
+    </div>
+
+    <div id="createPost">
+        <form method="post" action="posts">
+            <div class="form-group">
+                <h3 class="ml-5">Post:</h3>
+                <textarea rows="4" name="body" id="textarea" type="text" class="form-control ml-5 pr-5"></textarea>
+                <input class="btn btn-outline-secondary ml-5 mt-3" value="Post" type="submit">
+            </div>
+        </form>
+    </div>
+
+    <div id="editPost">
+        <form method="post" action="edit">
+            <div class="form-group">
+            <input id="postid" name="postid" hidden type="text">
+            <input id="userid" name="userid" hidden type="text">
+            <textarea rows="4" id="postArea" class="form-control ml-5 pr-5" name="body" type="text"></textarea>
+            <input value="Post" class="btn btn-outline-secondary ml-5 mt-3" type="submit">
+            </div>
+        </form>
+    </div>
+
+    <div id="profile">
+
+    </div>
+{% endblock %}
+
+{% block script %}
+    <script src="{% static 'network/index.js' %}"></script>
+{% endblock %}
